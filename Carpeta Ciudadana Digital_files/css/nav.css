@@ -1,0 +1,272 @@
+.navbar-govco {
+  background: var(--nav1-background-color);
+  padding: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+/* Reseteo de .nav */
+
+/* Reseteo de .container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: -120px;
+  margin: 0 auto;
+}
+
+/* Barra de navegación vertical */
+.nav-vertical {
+  width: auto;
+  background-color: var(--nav1-background-color);
+  padding: 1px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Estilos generales de la lista */
+.nav-vertical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos de los enlaces principales */
+.nav-vertical ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en enlaces principales */
+.nav-vertical ul li a:hover {
+  background-color: #082c72;
+}
+
+/* Estilos de submenú */
+.nav-vertical .submenu {
+  display: none;
+  position: absolute;
+  left: 100%; /* Alinea el submenú a la derecha del elemento padre */
+  top: 0;
+  background-color: #0b5ed7;
+  min-width: 180px; /* Ancho mínimo del submenú */
+  z-index: 1; /* Asegura que el submenú se superponga */
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de los enlaces dentro del submenú */
+.nav-vertical .submenu li a {
+  padding: 10px;
+  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+  color: #ffffff;
+}
+
+/* Mostrar submenú al hacer hover en el elemento principal */
+.nav-vertical li:hover .submenu {
+  display: block;
+}
+
+/* Hover para enlaces del submenú */
+.nav-vertical .submenu li a:hover {
+  background-color: #0943b5;
+}
+
+.login-nav {
+  display: flex;
+}
+
+.login-nav span {
+  font-size: 35px;
+  color: #fff;
+  background: #3366cc;
+  border-radius: 26px;
+  padding: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.login-nav span:hover {
+  font-size: 35px;
+  color: #36c;
+  background: white;
+  border-radius: 26px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.login-nav .btn-apps:focus-visible {
+  outline: 2px solid black !important;
+  display: inline-block;
+}
+
+.login-nav .btn-apps {
+  border: none;
+  color: #fff;
+}
+
+.login-nav .btn-apps:focus {
+  background: white;
+  border: none;
+  color: #36c;
+  border-radius: 113px;
+  transition: 0.5s all;
+}
+
+.login-nav .btn-apps:hover {
+  background: white;
+  border: none;
+  color: #36c;
+  border-radius: 113px;
+  transition: 0.5s all;
+}
+
+.login-nav .btn {
+  font-weight: 400;
+}
+
+.login-nav .btn:hover {
+  color: #f2f2f2 !important;
+}
+
+.login-nav .list-group-item {
+  border: 0 solid;
+  text-align: center;
+  cursor: pointer;
+  padding: 0 0.5em;
+  line-height: 1.2em;
+  font-size: 14px;
+  border-top-width: 0 !important;
+}
+
+.login-nav .list-group-item:hover {
+  background: rgba(51, 102, 204, 0.14);
+}
+
+button {
+  background: transparent;
+  font-weight: 500;
+  padding-top: 0;
+  border: none;
+}
+
+.popover-body button:hover {
+  background: #eef2f7;
+}
+
+button:focus-visible {
+  outline: 2px solid black !important;
+}
+
+.icon-carpeta-nav {
+  height: 25px;
+  background-position: -4px -3px;
+  width: 29px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  margin: 0 0 0 12px;
+}
+
+.navbar-logo .text-white:hover {
+  text-decoration: underline;
+}
+
+.navbar-logo .text-white {
+  scale: 1;
+}
+
+.login-nav .btn--registro {
+  background-color: #fff;
+  color: #0943b5;
+  font-size: 1.3em;
+  padding: 0.5em 1.4em;
+  border-radius: 19px;
+  font-family: Work Sans, sans-serif;
+  width: 140px;
+}
+
+.login-nav .btn--ccd-white {
+  width: 140px;
+  padding: 0 1em;
+}
+
+.login-nav .btn--registro:hover {
+  background-color: var(--nav1-background-color) !important;
+  border-color: var(--nav1-background-color) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  transition: 0.3s all;
+}
+
+.login-nav .material-icons-round {
+  font-size: 34px;
+  padding: 3px;
+}
+
+.title-box {
+  padding-top: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-family: Work Sans, sans-serif;
+  letter-spacing: 0;
+  color: #707070;
+  opacity: 1;
+}
+
+.activo img {
+  filter: grayscale(1);
+}
+
+@media only screen and (max-width: 800px) {
+  .login-nav {
+    float: left;
+    top: 0;
+  }
+
+  .titulo-nav {
+    float: left;
+    font-size: 17px;
+  }
+
+  .navbar {
+    height: auto;
+  }
+
+  .icon-carpeta-nav {
+    margin: 0 0 0 17px;
+    position: relative;
+    top: 4px;
+  }
+
+  .titulo-mobil {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 64px;
+    background: #3366cc;
+    align-items: center;
+    z-index: 5;
+    width: 100%;
+  }
+
+  .titulo-mobil a {
+    color: #fff;
+    padding: 2px 0 5px 5px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .title-box {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .login-nav {
+    display: none;
+  }
+}

@@ -1,0 +1,173 @@
+.landing {
+  background-size: cover;
+}
+
+.landing .bold-600 {
+  font-weight: 600;
+}
+
+.down-orange {
+  left: 0;
+  top: -23px;
+}
+
+.btn--ccd-dark {
+  width: 325px;
+  text-align: center;
+  max-width: 100%;
+  font-size: 1.1em;
+}
+
+.login-hl-h1 {
+  line-height: 35px !important;
+}
+
+.icon--cam {
+  color: #004884;
+  font-size: 3em;
+}
+
+.subtitle-govco {
+  color: #000;
+}
+
+.ayuda {
+  text-align: end;
+}
+
+.ayuda a {
+  font-family: Work Sans, sans-serif;
+  text-decoration: underline;
+}
+
+.login--h1 {
+  font-size: 2.5rem;
+  line-height: 35px !important;
+}
+
+.headline-l-govco {
+  font-weight: 500;
+  display: block;
+}
+
+.check-color {
+  color: #0943b5;
+}
+
+.list-container {
+  max-width: 600px;
+  min-width: 326px;
+  min-height: 329px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #b5c7e9;
+  box-shadow: 0 4px #b5c7e9;
+}
+
+.check-and-link {
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.title-link {
+  font-size: 1rem;
+}
+
+.title-list {
+  max-width: 440px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.list-and-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.img-tramite {
+  height: 260px;
+}
+
+.position-arrow {
+  top: -70px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .landing .overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(230, 239, 253, 0.95) 50%,
+      rgba(255, 255, 255, 0.5) 100%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .list-and-img {
+    grid-template-columns: 80%;
+  }
+
+  .img-tramite {
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .login--h1 {
+    font-size: 2rem;
+  }
+}
+
+.paso p {
+  height: auto;
+  min-height: 100px;
+}
+
+.paso span {
+  background-size: contain;
+  height: 40px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.btn-large {
+  width: 300px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.temas-interes img {
+  box-shadow: none;
+  width: 350px;
+  height: 274px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 720px) {
+  .temas-interes img {
+    height: 140px;
+    border-bottom: solid 0 #e6effd;
+  }
+
+  .modal-footer-noticias .btn-round {
+    width: 72% !important;
+    margin: 4px 15% !important;
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .temas-interes img {
+    width: 690px;
+  }
+}
+
+.material-icons-round {
+  font-size: 1.3em;
+  margin-right: 6px;
+  top: 5px;
+  position: relative;
+}

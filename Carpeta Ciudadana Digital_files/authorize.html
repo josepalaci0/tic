@@ -1,0 +1,30 @@
+
+<!-- saved from url=(0238)https://carpetaciudadana.and.gov.co/silent-refresh.html?error=login_required&state=SkdBSVpGWUtqZGJ-cF9ZaUdlNVBPUUVaMGFfQktRY0F0LlMwLkFNU3FuOHc0&session_state=E4jzs6dWGKO6worFl5K9wArVsmuV40wH7CJU_MSm_zQ.917CEEBBCD6A6C9054BB589CCBEFFC4B#_=_ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+<script>
+  // Based on: https://manfredsteyer.github.io/angular-oauth2-oidc/docs/additional-documentation/silent-refresh.html
+
+  const checks = [/[\?|&|#]code=/, /[\?|&|#]error=/, /[\?|&|#]token=/, /[\?|&|#]id_token=/];
+
+  function isResponse(str) {
+    let count = 0;
+
+    if (!str) {
+      return false;
+    }
+
+    for (let i = 0; i < checks.length; i++) {
+      if (str.match(checks[i])) return true;
+    }
+
+    return false;
+  }
+
+  let message = isResponse(location.hash) ? location.hash : '#' + location.search;
+//  console.log("Silent refresh iframe is posting to the parent application, message:", message);
+  (window.opener || window.parent).postMessage(message, location.origin);
+</script>
+
+
+
+</body></html>
