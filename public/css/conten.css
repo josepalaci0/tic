@@ -32,7 +32,7 @@
 
 /* Enlace que contiene el ícono y el texto */
 .content-page-barra-accesibilidad .block--gov-accessibility div a {
-  color: #fff;
+  color: var(--dark);
   display: flex;
   align-items: center;
   justify-content: center;
