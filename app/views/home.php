@@ -8,14 +8,14 @@
     <title>tic.ibague.gov.co</title>
     <meta name="description" content="Pagina web oficial Secretaria TIC Ibague ,Secretario Tic Ibague, Tic ibague">
     <base href=".">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="./Bootstrap v4.6.2.css" media="all">
-    <link rel="stylesheet" href="./css/root.css" media="all">
-    <link rel="stylesheet" href="./css/nav.css" media="all">
-    <link rel="stylesheet" href="./css/inputbox.css" media="all">
-    <link rel="stylesheet" href="./css/conten.css" media="all">
-    <link rel="stylesheet" href="./css/scroll.css" media="all">
-    <link rel="stylesheet" href="./css/info.css" media="all">
+    <link rel="icon" type="image/x-icon" href="<?php echo PUBLIC_PATH; ?>/favicon.ico">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/Bootstrap v4.6.2.css" media="all">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/css/root.css" media="all">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/css/nav.css" media="all">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/css/inputbox.css" media="all">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/css/conten.css" media="all">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/css/scroll.css" media="all">
+    <link rel="stylesheet" href="<?php echo PUBLIC_PATH; ?>/css/info.css" media="all">
 
 
 
@@ -30,7 +30,7 @@
         <div class="container">
             <div class="navbar-logo float-left">
                 <a target="_blank" title="Ir a página de gov.co" aria-label="Ir a página de gov.co" href="#">
-                    <img alt="Logo Gov.co" src="./img/gov.svg"></a>
+                    <img alt="Logo Gov.co" src="public/img/gov.svg"></a>
                 <button class="hide cursor-pointer text-white">Secretaria TIC</button>
             </div>
             <nav class="nav-vertical">
@@ -106,14 +106,15 @@
                     <div class="popover-body">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item text-grey"><button class="text-grey"><img alt="Logo Gov.co"
-                                        src="./img/iconos-rounded.svg"> Portal
+                                        src="<?php echo PUBLIC_PATH; ?>/img/iconos-rounded.svg"> Portal
                                     Aprende TIC
                                 </button></li>
                             <li class="list-group-item text-grey"><button class="text-grey activo"><img
-                                        alt="Logo Gov.co" src="./img/iconos-rounded3.svg"> Documentos
+                                        alt="Logo Gov.co" src="<?php echo PUBLIC_PATH; ?>/img/iconos-rounded3.svg">
+                                    Documentos
                                     Publicos</button></li>
                             <li class="list-group-item text-grey"><button class="text-grey"><img alt="Logo Gov.co"
-                                        src="./img/iconos-rounded2.svg">
+                                        src="<?php echo PUBLIC_PATH; ?>/img/iconos-rounded2.svg">
                                     Servicios en Linea
                                 </button></li>
                         </ul>
@@ -152,87 +153,91 @@
             </div>
         </div>
     </div>
-    </div>
 
-    <div>
-        <div class="content-page-barra-accesibilidad">
-            <script>
-            // Variable para controlar el estado de contraste
-            let isContrastMode = false;
 
-            // Almacena los colores originales para alternarlos manualmente
-            const nav1Color = getComputedStyle(document.documentElement).getPropertyValue("--nav1-background-color")
-                .trim();
-            const nav2Color = getComputedStyle(document.documentElement).getPropertyValue("--nav2-background-color")
-                .trim();
 
-            // Variable para rastrear el estado de contraste
-            let isContrasteEnabled = false;
+    <div class="content-page-barra-accesibilidad">
+        <script>
+        // Variable para controlar el estado de contraste
+        let isContrastMode = false;
 
-            function toggleContraste() {
-                // Alterna entre los colores almacenados
-                const newColor = isContrasteEnabled ? nav1Color : nav2Color;
+        // Almacena los colores originales para alternarlos manualmente
+        const nav1Color = getComputedStyle(document.documentElement).getPropertyValue("--nav1-background-color")
+            .trim();
+        const nav2Color = getComputedStyle(document.documentElement).getPropertyValue("--nav2-background-color")
+            .trim();
 
-                // Aplica el nuevo color a --nav1-background-color
-                document.documentElement.style.setProperty("--nav1-background-color", newColor);
+        // Variable para rastrear el estado de contraste
+        let isContrasteEnabled = false;
 
-                // Cambia el estado de contraste
-                isContrasteEnabled = !isContrasteEnabled;
-            }
-            </script>
-            <div class="block--gov-accessibility position-inherit">
-                <div class="block-options">
+        function toggleContraste() {
+            // Alterna entre los colores almacenados
+            const newColor = isContrasteEnabled ? nav1Color : nav2Color;
 
-                    <script>
-                    // Obtener el valor actual de la variable CSS --font-size
-                    function getCurrentFontSize() {
-                        return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size'));
+            // Aplica el nuevo color a --nav1-background-color
+            document.documentElement.style.setProperty("--nav1-background-color", newColor);
+
+            // Cambia el estado de contraste
+            isContrasteEnabled = !isContrasteEnabled;
+        }
+        </script>
+        <div class="block--gov-accessibility position-inherit">
+            <div class="block-options">
+
+                <script>
+                // Obtener el valor actual de la variable CSS --font-size
+                function getCurrentFontSize() {
+                    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size'));
+                }
+
+                // Aumentar el tamaño de fuente
+                function increaseFontSize() {
+                    let currentSize = getCurrentFontSize();
+                    document.documentElement.style.setProperty('--font-size', (currentSize + 2) + 'px');
+                }
+
+                // Disminuir el tamaño de fuente
+                function decreaseFontSize() {
+                    let currentSize = getCurrentFontSize();
+                    if (currentSize > 10) { // Evitar que el tamaño sea muy pequeño
+                        document.documentElement.style.setProperty('--font-size', (currentSize - 2) + 'px');
                     }
+                }
+                </script>
 
-                    // Aumentar el tamaño de fuente
-                    function increaseFontSize() {
-                        let currentSize = getCurrentFontSize();
-                        document.documentElement.style.setProperty('--font-size', (currentSize + 2) + 'px');
-                    }
+                <div class="ayuda-ref">
+                    <a class="contraste" aria-label="Más información" onclick="toggleContraste()" href="#">
+                        <span class="govco-icon govco-icon-contrast-n"></span>
 
-                    // Disminuir el tamaño de fuente
-                    function decreaseFontSize() {
-                        let currentSize = getCurrentFontSize();
-                        if (currentSize > 10) { // Evitar que el tamaño sea muy pequeño
-                            document.documentElement.style.setProperty('--font-size', (currentSize - 2) + 'px');
-                        }
-                    }
-                    </script>
+                    </a>
 
-                    <div class="ayuda-ref">
-                        <a class="contraste" aria-label="Más información" onclick="toggleContraste()" href="#">
-                            <span class="govco-icon govco-icon-contrast-n"></span>
+                </div>
+                <div class="ayuda-ref">
+                    <a class="min-fontsize" rel="noopener" aria-label="Reducir letra" onclick="increaseFontSize()"
+                        title="Reducir letra">
 
-                        </a>
+                        <span class="govco-icon govco-icon-less-size-n"></span></a>
 
-                    </div>
-                    <div class="ayuda-ref">
-                        <a class="min-fontsize" rel="noopener" aria-label="Reducir letra" onclick="increaseFontSize()"
-                            title="Reducir letra">
+                </div>
+                <div class="ayuda-ref">
+                    <a class="max-fontsize" rel="noopener" tabindex="0" aria-label="Aumentar letra"
+                        onclick="decreaseFontSize()" title="Aumentar letra"><span
+                            class="govco-icon govco-icon-more-size-n">
 
-                            <span class="govco-icon govco-icon-less-size-n"></span></a>
+                        </span></a>
 
-                    </div>
-                    <div class="ayuda-ref">
-                        <a class="max-fontsize" rel="noopener" tabindex="0" aria-label="Aumentar letra"
-                            onclick="decreaseFontSize()" title="Aumentar letra"><span
-                                class="govco-icon govco-icon-more-size-n">
-
-                            </span></a>
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <p id="response"></p>
+    <p id="response"></p>
+
+    <?php require_once __DIR__ . '/../views/section.php'; ?>
+
+
 </body>
-<script src="/script.js"></script>
+<script src="<?php echo PUBLIC_PATH; ?>/script.js"></script>
 
 
 

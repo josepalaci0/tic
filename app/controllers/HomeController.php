@@ -13,6 +13,7 @@ class HomeController {
     public function index() {
         // Carga la vista principal
         require_once __DIR__ . '/../views/home.php';
+        require_once __DIR__ . '/../views/section.php';
     }
 
     public function processData() {
