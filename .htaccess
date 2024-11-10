@@ -1,0 +1,46 @@
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# (Opcional) Establecer la base de reescritura si tu aplicación no está en la raíz del dominio
+# RewriteBase /
+
+# Redirigir todas las solicitudes a index.php excepto los archivos y directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Evitar el acceso a directorios sensibles
+<IfModule mod_rewrite.c>
+    RewriteRule ^(app|core|config|database|storage)/ - [F,L,NC]
+</IfModule>
+
+# Denegar el acceso a archivos ocultos (archivos que comienzan con .)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Deshabilitar la navegación por directorios
+
+
+# Configurar encabezados de seguridad
+<IfModule mod_headers.c>
+    # Evitar que el navegador detecte el tipo de contenido
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevenir que la página sea cargada en un iframe
+    Header set X-Frame-Options "DENY"
+
+    # Habilitar la protección contra XSS en el navegador
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Controlar la política de referencias
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+
+    # Política de seguridad de contenido básica
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+</IfModule>
+
+# Proteger el propio archivo .htaccess para que no sea accesible públicamente
+<Files ".htaccess">
+    Require all denied
+</Files>
